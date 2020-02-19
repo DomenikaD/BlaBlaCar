@@ -14,7 +14,7 @@ public class Perfil extends javax.swing.JInternalFrame {
     
     InformacionPersonal informacionPersonal;
     Preferencia preferencia;
-    
+    ListaCoche listaCoche;
     String email;
     /**
      * Creates new form Perfil
@@ -59,6 +59,11 @@ public class Perfil extends javax.swing.JInternalFrame {
         });
 
         jButton2.setText("Coche");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,6 +119,16 @@ public class Perfil extends javax.swing.JInternalFrame {
         preferencia.setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        if(listaCoche == null || !listaCoche.isVisible()){
+        listaCoche = new ListaCoche();
+        BlaBlaCar.jDesktopPane1.add(listaCoche);
+        listaCoche.toFront();
+        listaCoche.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

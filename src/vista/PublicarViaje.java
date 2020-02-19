@@ -14,6 +14,7 @@ public class PublicarViaje extends javax.swing.JInternalFrame {
     /**
      * Creates new form PublicarViaje
      */
+    PublicarViaje2 publicarViaje;
     public PublicarViaje() {
         initComponents();
     }
@@ -80,6 +81,11 @@ public class PublicarViaje extends javax.swing.JInternalFrame {
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(102, 102, 102));
         jButton1.setText("Continuar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, -1, -1));
         getContentPane().add(dateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 150, -1));
 
@@ -98,6 +104,15 @@ public class PublicarViaje extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(publicarViaje == null || !publicarViaje.isVisible()){
+        publicarViaje = new PublicarViaje2();
+        BlaBlaCar.jDesktopPane1.add(publicarViaje);
+        publicarViaje.toFront();
+        publicarViaje.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

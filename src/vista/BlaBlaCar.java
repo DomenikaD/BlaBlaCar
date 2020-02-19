@@ -18,11 +18,14 @@ public class BlaBlaCar extends javax.swing.JFrame {
     
     PublicarViaje publicarViaje;
     
+    
     ListaViajes listaViajes;
+    Mensajes mensajes;
     TransferenciaPendientes transferenciaPendientes;
     BuscarViaje buscarViaje;
     Perfil perfil;
     String email;
+    
     /**
      * Creates new form BlaBlaCar
      */
@@ -183,7 +186,11 @@ public class BlaBlaCar extends javax.swing.JFrame {
     }//GEN-LAST:event_menuBuscarMousePressed
 
     private void menuItemMensajesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemMensajesActionPerformed
-
+        if(mensajes == null || !mensajes.isVisible()){
+        mensajes = new Mensajes();
+        jDesktopPane1.add(mensajes);
+        mensajes.show();
+        }
     }//GEN-LAST:event_menuItemMensajesActionPerformed
 
     private void menuItemPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPerfilActionPerformed
