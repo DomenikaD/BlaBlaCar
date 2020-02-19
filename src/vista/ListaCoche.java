@@ -5,9 +5,16 @@
  */
 package vista;
 
+import controlador.ControladorAuto;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
+<<<<<<< Upstream, based on origin/master
  * @author Domenika Delgado
+=======
+ * @author Carmen Bravo
+>>>>>>> 79f8887 Creación de la factura
  */
 public class ListaCoche extends javax.swing.JInternalFrame {
 
@@ -15,9 +22,28 @@ public class ListaCoche extends javax.swing.JInternalFrame {
      * Creates new form ListaCoche
      */
     AnadirCoche anadirCoche;
+    ControladorAuto controladorAuto;
     
-    public ListaCoche() {
+    //Tabla
+    DefaultTableModel dtm;
+    Object[] o = new Object[6];
+    
+    String email;
+    
+    public ListaCoche(String emai) {
         initComponents();
+        email=emai;
+        //Tabla
+        dtm = (DefaultTableModel)jTable1.getModel();
+        controladorAuto= new ControladorAuto();
+        llenarTabla();
+    }
+    
+    public void llenarTabla(){
+        dtm.setRowCount(0);
+        dtm = (DefaultTableModel) jTable1.getModel();
+        String ObjetoS[]=new String [6];
+        controladorAuto.llenarTabla(controladorAuto.buscar(email), dtm,o);  
     }
 
     /**
@@ -44,7 +70,7 @@ public class ListaCoche extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Título 5", "Título 6"
+                "Id", "Placa", "Color", "Asientos", "Tipo Auto", "Modelo"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -60,7 +86,7 @@ public class ListaCoche extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 677, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton1)

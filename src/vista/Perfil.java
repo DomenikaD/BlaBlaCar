@@ -123,7 +123,7 @@ public class Perfil extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         if(listaCoche == null || !listaCoche.isVisible()){
-        listaCoche = new ListaCoche();
+        listaCoche = new ListaCoche(email);
         BlaBlaCar.jDesktopPane1.add(listaCoche);
         listaCoche.toFront();
         listaCoche.setVisible(true);
