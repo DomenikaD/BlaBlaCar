@@ -95,5 +95,34 @@ public class ControladorUsuario {
         }
         return llena;
     }
+    
+    public Usuario buscarUsuarioObjeto(String email){
+        Usuario usu=new Usuario();
+        Connection con = null;
+        String sql = " SELECT *"
+                    + " FROM BLA_USUARIOS "
+                    + " WHERE USU_EMAIL='"+email+"'";
+        try {
+            con = Conexion.getConnection();
+            PreparedStatement ps= con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+            
+            while(rs.next()){
+                
+                usu.setGenero(rs.getString("usu_genero"));
+                usu.setNombre(rs.getString("usu_nombre"));
+                usu.setApellido(rs.getString("usu_apellido"));
+                usu.setEmail(rs.getString("usu_email"));
+                usu.setFechaNacimiento(rs.getString("usu_fechanacimiento"));
+                usu.setTelefono(rs.getString("usu_telefono"));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Conexion.close(con);
+        }
+        return usu;
+    }
 }
     

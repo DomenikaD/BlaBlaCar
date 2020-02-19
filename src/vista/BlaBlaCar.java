@@ -17,6 +17,7 @@ public class BlaBlaCar extends javax.swing.JFrame {
     Principal principal;
     
     PublicarViaje publicarViaje;
+    Facturas factura;
     
     
     ListaViajes listaViajes;
@@ -34,6 +35,7 @@ public class BlaBlaCar extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         email=emai;
         jMenuPerfil.setText(usuario);
+        
         
         
         
@@ -242,7 +244,11 @@ public class BlaBlaCar extends javax.swing.JFrame {
     }//GEN-LAST:event_menuPublicarViajeMousePressed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
+        if(factura == null || !factura.isVisible()){
+        factura = new Facturas();
+        jDesktopPane1.add(factura);
+        factura.show();
+        }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     

@@ -5,6 +5,9 @@
  */
 package vista;
 
+import controlador.ControladorUsuario;
+import modelo.Usuario;
+
 /**
  *
  * @author Domenika Delgado
@@ -14,8 +17,28 @@ public class InformacionPersonal extends javax.swing.JInternalFrame {
     /**
      * Creates new form InformacionPersonal
      */
-    public InformacionPersonal() {
+    
+    ControladorUsuario controladorUsuario;
+    String email;
+    public InformacionPersonal(String ema) {
         initComponents();
+        email=ema;
+        
+        controladorUsuario= new ControladorUsuario();
+        Usuario usu= new Usuario();
+        
+        usu=controladorUsuario.buscarUsuarioObjeto(email);
+        
+        txtGenero.setText(usu.getGenero());
+        txtNombres.setText(usu.getNombre());
+        txtApellidos.setText(usu.getApellido());
+        txtEmail.setText(usu.getEmail());
+        txtFecha.setText(usu.getFechaNacimiento());
+        txtTelefono.setText(usu.getTelefono());
+                
+        
+        
+        
     }
 
     /**

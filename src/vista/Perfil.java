@@ -89,7 +89,7 @@ public class Perfil extends javax.swing.JInternalFrame {
     private void btnInformacionPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformacionPersonalActionPerformed
         
         if(informacionPersonal == null || !informacionPersonal.isVisible()){
-        informacionPersonal = new InformacionPersonal();
+        informacionPersonal = new InformacionPersonal(email);
         BlaBlaCar.jDesktopPane1.add(informacionPersonal);
         informacionPersonal.toFront();
         informacionPersonal.setVisible(true);
