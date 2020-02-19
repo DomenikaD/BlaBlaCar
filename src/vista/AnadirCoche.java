@@ -152,16 +152,14 @@ public class AnadirCoche extends javax.swing.JInternalFrame {
         Auto auto= new Auto();
         
         auto.setId(controladorAuto.llenarId());
-        auto.setPlaca(txtColor.getText());
+        auto.setPlaca(txtPlaca.getText());
         auto.setColor(txtColor.getText());
         auto.setEspacio(0);
         auto.setEstado('A');
         auto.setTip_aut_id_fk(controladorAuto.buscarTipo(opciontipo));
-        auto.setMod_id_fk(controladorAuto.buscarModelo(opcionMarca));
+        auto.setMod_id_fk(controladorAuto.buscarModelo(opcionModelo));
         auto.setUsu_id_fk(controladorAuto.buscar(email));
-        
-        System.out.println("d"+auto.getMod_id_fk());
-        
+
         if(controladorAuto.anadirAuto(auto)==true){
         JOptionPane.showMessageDialog(null,"Guardado", "Informacion", JOptionPane.INFORMATION_MESSAGE); 
         dispose();

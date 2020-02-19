@@ -105,6 +105,7 @@ public class ListaCoche extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
         if(anadirCoche == null || !anadirCoche.isVisible()){
         anadirCoche = new AnadirCoche(email);
         BlaBlaCar.jDesktopPane1.add(anadirCoche);

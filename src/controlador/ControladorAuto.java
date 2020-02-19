@@ -26,7 +26,7 @@ public class ControladorAuto {
         boolean ban=false;
         Connection con = null;
             String sql = "SELECT count(*) "
-                       + "FROM BLA_Autos";
+                       + "FROM BLA_AUTOS";
          try {
 
             con = Conexion.getConnection();
@@ -295,16 +295,17 @@ public class ControladorAuto {
     public boolean anadirAuto(Auto auto){
         boolean r = false;
         Connection con = null;
-       
+        System.out.println("sd"+llenarId());
         String sql = "Insert Into bla_autos Values("+auto.getId()
                                                     +",'"+auto.getPlaca()
                                                     +"','"+auto.getColor()
-                                                    +"',"+auto.getEspacio()
+                                                    +"',0"
                                                     +",'"+auto.getEstado()
                                                     +"',"+auto.getTip_aut_id_fk()
                                                     +","+auto.getMod_id_fk()
                                                     +","+auto.getUsu_id_fk()
                                                     +")";
+        
         try{
             con = Conexion.getConnection();
             PreparedStatement ps= con.prepareStatement(sql);
@@ -320,6 +321,7 @@ public class ControladorAuto {
 
         return r;
     }
+    
 }
     
 
