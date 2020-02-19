@@ -5,18 +5,30 @@
  */
 package vista;
 
+import controlador.ControladorUsuario;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
+import modelo.Usuario;
+
 /**
  *
  * @author GerardoG
  */
 public class SignUp extends javax.swing.JFrame {
 
+    ControladorUsuario controladorUsuario;
+    Principal ventanaPrincipal;
+    String genero;
+    
+    SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yy");
     /**
      * Creates new form SignUp
      */
     public SignUp() {
         initComponents();
         setLocationRelativeTo(null);
+        controladorUsuario=new ControladorUsuario();
+        
     }
 
     /**
@@ -85,6 +97,11 @@ public class SignUp extends javax.swing.JFrame {
 
         comboBoxGenero.setForeground(new java.awt.Color(51, 51, 51));
         comboBoxGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mujer", "Hombre" }));
+        comboBoxGenero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxGeneroActionPerformed(evt);
+            }
+        });
         getContentPane().add(comboBoxGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 150, -1));
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -138,11 +155,47 @@ public class SignUp extends javax.swing.JFrame {
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        ventanaPrincipal=new Principal();
+        ventanaPrincipal.setVisible(true);
+        
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
-        // TODO add your handling code here:
+      boolean a=controladorUsuario.buscarUsuario(txtEmail.getText());
+      
+        if(txtApellidos.equals("") || txtEmail.equals("") || txtNombres.equals("") || txtPassword.equals("") || txtTelefono.equals("")){//cadenas de texto string
+            JOptionPane.showMessageDialog(null,"Llenar celdas", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            if (a==true){
+                JOptionPane.showMessageDialog(null,"Datos mal Ingresados", "Error", JOptionPane.ERROR_MESSAGE);
+            }else{
+                Usuario usu=new Usuario();
+                usu.setId(controladorUsuario.llenarId());
+                usu.setEmail(txtEmail.getText());
+                usu.setNombre(txtNombres.getText());
+                usu.setApellido(txtApellidos.getText());
+                
+                String fechaNacimeinto=dateFormat.format(DateFechaNacimiento.getDate());
+                usu.setFechaNacimiento(fechaNacimeinto);
+                usu.setPassword(txtPassword.getText());
+                usu.setTelefono(txtTelefono.getText());
+                usu.setGenero(genero);
+                if(controladorUsuario.crearUsuario(usu)==true){
+                    JOptionPane.showMessageDialog(null,"Datos Creados Correctamente", "Error", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(null,"No se pudo guardar los datos", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
     }//GEN-LAST:event_btnSignUpActionPerformed
+
+    private void comboBoxGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxGeneroActionPerformed
+        genero=comboBoxGenero.getSelectedItem().toString();
+        
+        String fechaNacimeinto=dateFormat.format(DateFechaNacimiento.getDate());
+        System.out.println("sds "+fechaNacimeinto);
+    }//GEN-LAST:event_comboBoxGeneroActionPerformed
 
     /**
      * @param args the command line arguments
