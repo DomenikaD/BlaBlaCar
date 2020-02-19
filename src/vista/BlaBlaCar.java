@@ -75,6 +75,7 @@ public class BlaBlaCar extends javax.swing.JFrame {
         jMenuItem2.setText("Mensajes");
         jMenuPerfil.add(jMenuItem2);
 
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/preferencias perfel.png"))); // NOI18N
         jMenuItem3.setText("Perfil");
         jMenuPerfil.add(jMenuItem3);
 
