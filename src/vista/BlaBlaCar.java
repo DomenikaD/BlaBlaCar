@@ -17,13 +17,14 @@ public class BlaBlaCar extends javax.swing.JFrame {
     Principal principal;
     
     TransferenciaPendientes transferenciaPendientes;
+    BuscarViaje buscarViaje;
     
     /**
      * Creates new form BlaBlaCar
      */
     public BlaBlaCar() {
         initComponents();
-        
+        setLocationRelativeTo(null);
         
         jMenuPerfil.setText("Dome");
         
@@ -50,7 +51,7 @@ public class BlaBlaCar extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         menuItemCerrarSesion = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
+        menuBuscar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,9 +108,14 @@ public class BlaBlaCar extends javax.swing.JFrame {
         jMenu4.setText("Publicar Viaje");
         jMenuBar.add(jMenu4);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar.png"))); // NOI18N
-        jMenu1.setText("Buscar");
-        jMenuBar.add(jMenu1);
+        menuBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar.png"))); // NOI18N
+        menuBuscar.setText("Buscar");
+        menuBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                menuBuscarMousePressed(evt);
+            }
+        });
+        jMenuBar.add(menuBuscar);
 
         setJMenuBar(jMenuBar);
 
@@ -142,6 +148,15 @@ public class BlaBlaCar extends javax.swing.JFrame {
         transferenciaPendientes.show();
         }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void menuBuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuBuscarMousePressed
+        // TODO add your handling code here:
+        if(buscarViaje == null || !buscarViaje.isVisible()){
+        buscarViaje = new BuscarViaje();
+        jDesktopPane1.add(buscarViaje);
+        buscarViaje.show();
+        }
+    }//GEN-LAST:event_menuBuscarMousePressed
 
     /**
      * @param args the command line arguments
@@ -180,7 +195,6 @@ public class BlaBlaCar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenuItem jMenuItem1;
@@ -189,6 +203,7 @@ public class BlaBlaCar extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenu jMenuPerfil;
+    private javax.swing.JMenu menuBuscar;
     private javax.swing.JMenuItem menuItemCerrarSesion;
     // End of variables declaration//GEN-END:variables
 }
