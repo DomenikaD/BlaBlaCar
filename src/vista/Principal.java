@@ -41,26 +41,26 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnLogin.setBackground(new java.awt.Color(255, 255, 255));
-        btnLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(0, 51, 255));
+        btnLogin.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(0, 204, 51));
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 90, -1));
+        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 200, -1));
 
         btnSignup.setBackground(new java.awt.Color(255, 255, 255));
-        btnSignup.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnSignup.setForeground(new java.awt.Color(0, 51, 255));
+        btnSignup.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        btnSignup.setForeground(new java.awt.Color(0, 204, 51));
         btnSignup.setText("SignUp");
         btnSignup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignupActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 90, -1));
+        getContentPane().add(btnSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 200, -1));
 
         btnExit.setBackground(new java.awt.Color(255, 255, 255));
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cancel.png"))); // NOI18N
@@ -72,7 +72,7 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 20, 20));
 
         imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/principal.png"))); // NOI18N
-        getContentPane().add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 170));
+        getContentPane().add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

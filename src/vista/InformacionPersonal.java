@@ -27,23 +27,114 @@ public class InformacionPersonal extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setClosable(true);
+        jLabel1 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtNombres = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtApellidos = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtTelefono = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtFecha = new javax.swing.JTextField();
+        txtGenero = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        imagen = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
-        );
+        setClosable(true);
+        setEnabled(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setText("Email");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
+
+        txtEmail.setEnabled(false);
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 250, -1));
+
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("Nombres");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
+
+        txtNombres.setEnabled(false);
+        getContentPane().add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 250, -1));
+
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("Apellidos");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
+
+        txtApellidos.setEnabled(false);
+        getContentPane().add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 250, -1));
+
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("Fecha de Nacimiento");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, 20));
+
+        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setText("Telefono");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
+
+        txtTelefono.setEnabled(false);
+        getContentPane().add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 250, -1));
+
+        jLabel8.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel8.setText("Información Personal");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Soy");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
+
+        txtFecha.setEnabled(false);
+        getContentPane().add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 250, -1));
+
+        txtGenero.setEnabled(false);
+        getContentPane().add(txtGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 250, -1));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/back.jpg"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 30, 30));
+
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/informacion.png"))); // NOI18N
+        getContentPane().add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 530, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel imagen;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtFecha;
+    private javax.swing.JTextField txtGenero;
+    private javax.swing.JTextField txtNombres;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
