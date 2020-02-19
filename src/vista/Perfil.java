@@ -34,6 +34,7 @@ public class Perfil extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         btnInformacionPersonal = new javax.swing.JButton();
 
+        setClosable(true);
         setTitle("Perfil");
 
         jLabel1.setFont(new java.awt.Font("Pristina", 1, 36)); // NOI18N
