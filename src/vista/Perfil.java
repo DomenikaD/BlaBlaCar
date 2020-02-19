@@ -13,6 +13,7 @@ public class Perfil extends javax.swing.JInternalFrame {
 
     
     InformacionPersonal informacionPersonal;
+    
   
     /**
      * Creates new form Perfil
@@ -75,8 +76,13 @@ public class Perfil extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInformacionPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformacionPersonalActionPerformed
-        // TODO add your handling code here:
         
+        if(informacionPersonal == null || !informacionPersonal.isVisible()){
+        informacionPersonal = new InformacionPersonal();
+        BlaBlaCar.jDesktopPane1.add(informacionPersonal);
+        informacionPersonal.toFront();
+        informacionPersonal.setVisible(true);
+        }
     }//GEN-LAST:event_btnInformacionPersonalActionPerformed
 
 
