@@ -124,6 +124,11 @@ public class BlaBlaCar extends javax.swing.JFrame {
 
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/facturas.png"))); // NOI18N
         jMenuItem5.setText("Facturas");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenuPerfil.add(jMenuItem5);
 
         menuItemCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrarSesion.jpg"))); // NOI18N
@@ -235,6 +240,10 @@ public class BlaBlaCar extends javax.swing.JFrame {
         publicarViaje.show();
         }
     }//GEN-LAST:event_menuPublicarViajeMousePressed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     
     
