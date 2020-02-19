@@ -50,8 +50,9 @@ public class BlaBlaCar extends javax.swing.JFrame {
         jMenuPerfil = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        menuIt = new javax.swing.JMenuItem();
+        menuItemPerfil = new javax.swing.JMenuItem();
+        menuItemTransferencia = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         menuItemCerrarSesion = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -63,11 +64,11 @@ public class BlaBlaCar extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 854, Short.MAX_VALUE)
+            .addGap(0, 1073, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 625, Short.MAX_VALUE)
+            .addGap(0, 715, Short.MAX_VALUE)
         );
 
         jMenuPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/perfil.png"))); // NOI18N
@@ -78,20 +79,39 @@ public class BlaBlaCar extends javax.swing.JFrame {
 
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mensajes.png"))); // NOI18N
         jMenuItem2.setText("Mensajes");
-        jMenuPerfil.add(jMenuItem2);
-
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/preferencias perfel.png"))); // NOI18N
-        jMenuItem3.setText("Perfil");
-        jMenuPerfil.add(jMenuItem3);
-
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/transferencia.png"))); // NOI18N
-        jMenuItem4.setText("Transferencias Pendientes");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenuPerfil.add(jMenuItem4);
+        jMenuPerfil.add(jMenuItem2);
+
+        menuIt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/preferencias perfel.png"))); // NOI18N
+        menuIt.setText("Perfil");
+        menuIt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItActionPerformed(evt);
+            }
+        });
+        jMenuPerfil.add(menuIt);
+
+        menuItemPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/preferencias perfel.png"))); // NOI18N
+        menuItemPerfil.setText("Perfil");
+        menuItemPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemPerfilActionPerformed(evt);
+            }
+        });
+        jMenuPerfil.add(menuItemPerfil);
+
+        menuItemTransferencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/transferencia.png"))); // NOI18N
+        menuItemTransferencia.setText("Transferencias Pendientes");
+        menuItemTransferencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemTransferenciaActionPerformed(evt);
+            }
+        });
+        jMenuPerfil.add(menuItemTransferencia);
 
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/facturas.png"))); // NOI18N
         jMenuItem5.setText("Facturas");
@@ -162,6 +182,17 @@ public class BlaBlaCar extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_menuBuscarMousePressed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        //hollla
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void menuItemPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPerfilActionPerformed
+        // TODO add your handling code here:
+        
+        //holaaa
+    }//GEN-LAST:event_menuItemPerfilActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -203,11 +234,12 @@ public class BlaBlaCar extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenu jMenuPerfil;
     private javax.swing.JMenu menuBuscar;
+    private javax.swing.JMenuItem menuIt;
     private javax.swing.JMenuItem menuItemCerrarSesion;
+    private javax.swing.JMenuItem menuItemPerfil;
+    private javax.swing.JMenuItem menuItemTransferencia;
     // End of variables declaration//GEN-END:variables
 }
