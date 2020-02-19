@@ -6,6 +6,7 @@
 package vista;
 
 import controlador.ControladorUsuario;
+import java.text.Format;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
@@ -18,9 +19,12 @@ public class SignUp extends javax.swing.JFrame {
 
     ControladorUsuario controladorUsuario;
     Principal ventanaPrincipal;
+    BlaBlaCar blablacar;
     String genero;
     
-    SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yy");
+    Format dateFormat=new SimpleDateFormat("dd/MM/yy");
+
+
     /**
      * Creates new form SignUp
      */
@@ -182,7 +186,10 @@ public class SignUp extends javax.swing.JFrame {
                 usu.setTelefono(txtTelefono.getText());
                 usu.setGenero(genero);
                 if(controladorUsuario.crearUsuario(usu)==true){
-                    JOptionPane.showMessageDialog(null,"Datos Creados Correctamente", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Datos Creados Correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+                    setVisible(false);
+                    blablacar=new BlaBlaCar();
+                    blablacar.setVisible(true);
                 }else{
                     JOptionPane.showMessageDialog(null,"No se pudo guardar los datos", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -192,9 +199,6 @@ public class SignUp extends javax.swing.JFrame {
 
     private void comboBoxGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxGeneroActionPerformed
         genero=comboBoxGenero.getSelectedItem().toString();
-        
-        String fechaNacimeinto=dateFormat.format(DateFechaNacimiento.getDate());
-        System.out.println("sds "+fechaNacimeinto);
     }//GEN-LAST:event_comboBoxGeneroActionPerformed
 
     /**
