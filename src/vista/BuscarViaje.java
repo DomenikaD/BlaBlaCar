@@ -60,35 +60,35 @@ public class BuscarViaje extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 51));
         jLabel1.setText("¿Desde dónde sales exactamente?");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, 20));
-        getContentPane().add(txtSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 390, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 20));
+        getContentPane().add(txtSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 390, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 51));
         jLabel3.setText("¿A dónde quieres ir?");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
-        getContentPane().add(txtLlegar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 390, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, 20));
+        getContentPane().add(txtLlegar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 390, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 51));
         jLabel4.setText("¿Cuándo vas a viajar?");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
-        getContentPane().add(dateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+        getContentPane().add(dateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 130, -1));
 
         comboBoxHora.setFont(new java.awt.Font("Tempus Sans ITC", 2, 14)); // NOI18N
         comboBoxHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00" }));
-        getContentPane().add(comboBoxHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
+        getContentPane().add(comboBoxHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 110, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 51));
         jLabel5.setText("Plazas que quieres reservar");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, -1, -1));
-        getContentPane().add(spinnerCantidadAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
+        getContentPane().add(spinnerCantidadAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, -1, -1));
 
         btnContinuar.setBackground(new java.awt.Color(255, 255, 255));
         btnContinuar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnContinuar.setText("Continuar");
-        getContentPane().add(btnContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, -1, -1));
+        getContentPane().add(btnContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
 
         Imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscarViajes.jpg"))); // NOI18N
         getContentPane().add(Imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 400));
