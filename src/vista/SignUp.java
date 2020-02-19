@@ -188,7 +188,7 @@ public class SignUp extends javax.swing.JFrame {
                 if(controladorUsuario.crearUsuario(usu)==true){
                     JOptionPane.showMessageDialog(null,"Datos Creados Correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
                     setVisible(false);
-                    blablacar=new BlaBlaCar();
+                    blablacar=new BlaBlaCar(usu.getNombre());
                     blablacar.setVisible(true);
                 }else{
                     JOptionPane.showMessageDialog(null,"No se pudo guardar los datos", "Error", JOptionPane.ERROR_MESSAGE);

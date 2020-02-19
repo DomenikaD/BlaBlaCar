@@ -5,6 +5,9 @@
  */
 package vista;
 
+import controlador.ControladorLogin;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Domenika Delgado
@@ -17,10 +20,12 @@ public class Login extends javax.swing.JFrame {
     
     Principal principal;
     BlaBlaCar blablacar;
+    ControladorLogin controladorLogin;
     
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
+        controladorLogin=new ControladorLogin();
     }
 
     /**
@@ -101,9 +106,21 @@ public class Login extends javax.swing.JFrame {
            setVisible(false);
            principal.setVisible(true); 
         }else if(codigo==10){
-           blablacar = new BlaBlaCar();
-           setVisible(false);
-           blablacar.setVisible(true); 
+            
+            if(txtUsername.equals("")|| txtPassword.equals("")){
+                JOptionPane.showMessageDialog(null,"Llene las celdas", "Error", JOptionPane.ERROR_MESSAGE);
+            }else{
+                String pasS=new String(txtPassword.getPassword());
+                
+                if (controladorLogin.buscarLogin(txtUsername.getText(), pasS)==true){
+                       blablacar = new BlaBlaCar(controladorLogin.buscar(txtUsername.getText()));
+                       setVisible(false);
+                       blablacar.setVisible(true); 
+                }else{
+                     JOptionPane.showMessageDialog(null,"Datos no Existen", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+           
         }
         
     }//GEN-LAST:event_txtPasswordKeyPressed

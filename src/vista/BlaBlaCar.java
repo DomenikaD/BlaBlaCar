@@ -22,13 +22,17 @@ public class BlaBlaCar extends javax.swing.JFrame {
     /**
      * Creates new form BlaBlaCar
      */
-    public BlaBlaCar() {
+    public BlaBlaCar(String usuario) {
         initComponents();
         setLocationRelativeTo(null);
         
-        jMenuPerfil.setText("Dome");
+        jMenuPerfil.setText(usuario);
         
         
+        
+    }
+
+    private BlaBlaCar() {
         
     }
 
