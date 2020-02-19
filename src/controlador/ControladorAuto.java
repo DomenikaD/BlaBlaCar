@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
+import modelo.Auto;
 import modelo.Modelo;
 
 /**
@@ -20,7 +21,7 @@ import modelo.Modelo;
  */
 public class ControladorAuto {
     
-    private int llenarId(){
+    public int llenarId(){
         int llena=0;
         boolean ban=false;
         Connection con = null;
@@ -70,8 +71,7 @@ public class ControladorAuto {
     public void llenarTabla(int id,DefaultTableModel dtm,Object [] o){
         Connection con = null;
         String sql = " SELECT *"
-                    + " FROM bla_autos"
-                    + " WHERE bla_usuarios_usu_id= "+id;
+                    + " FROM bla_autos WHERE bla_usuarios_usu_id = "+id;
         try {
             con = Conexion.getConnection();
             PreparedStatement ps= con.prepareStatement(sql);
@@ -241,6 +241,84 @@ public class ControladorAuto {
             Conexion.close(con);
         }
         return id;
+    }
+    
+    
+    public int buscarModelo(String nombre){
+        int id=0;
+       
+        Connection con = null;
+        String sql = " SELECT *"
+                    + " FROM BLA_MODELOS "
+                    + " WHERE mod_nombre='"+nombre+"'";
+        try {
+            con = Conexion.getConnection();
+            PreparedStatement ps= con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+            
+            while(rs.next()){
+                id=rs.getInt("mod_id");
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Conexion.close(con);
+        }
+        return id;
+    }
+    
+    public int buscarTipo(String nombre){
+        int id=0;
+       
+        Connection con = null;
+        String sql = " SELECT *"
+                    + " FROM BLA_tip_autos "
+                    + " WHERE tipo_aut_nombre='"+nombre+"'";
+        try {
+            con = Conexion.getConnection();
+            PreparedStatement ps= con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+            
+            while(rs.next()){
+                id=rs.getInt("tipo_aut_id");
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Conexion.close(con);
+        }
+        return id;
+    }
+    
+    public boolean anadirAuto(Auto auto){
+        boolean r = false;
+        Connection con = null;
+       
+        String sql = "Insert Into bla_autos Values("+auto.getId()
+                                                    +",'"+auto.getPlaca()
+                                                    +"','"+auto.getColor()
+                                                    +"',"+auto.getEspacio()
+                                                    +",'"+auto.getEstado()
+                                                    +"',"+auto.getTip_aut_id_fk()
+                                                    +","+auto.getMod_id_fk()
+                                                    +","+auto.getUsu_id_fk()
+                                                    +")";
+        try{
+            con = Conexion.getConnection();
+            PreparedStatement ps= con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+            
+            r=true;
+	    
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Conexion.close(con);
+        }
+
+        return r;
     }
 }
     

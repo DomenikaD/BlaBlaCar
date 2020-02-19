@@ -7,6 +7,7 @@ package vista;
 
 import controlador.ControladorAuto;
 import javax.swing.JOptionPane;
+import modelo.Auto;
 
 /**
  *
@@ -18,13 +19,15 @@ public class AnadirCoche extends javax.swing.JInternalFrame {
      * Creates new form Coche
      */
     String opcionMarca;
+    String opcionModelo;
     String opciontipo;
     ControladorAuto controladorAuto;
+    String email;
     
-    public AnadirCoche() {
+    public AnadirCoche(String emai) {
         initComponents();
         controladorAuto = new ControladorAuto();
-        
+        email=emai;
         //Cargamos el ComboBox
         if(controladorAuto.llenarComboBoxNombreMarca(jComboMarca)==false){
             JOptionPane.showMessageDialog(null,"Cargado valores", "Informacion", JOptionPane.INFORMATION_MESSAGE); 
@@ -45,7 +48,7 @@ public class AnadirCoche extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtPlaca = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jComboMarca = new javax.swing.JComboBox<>();
@@ -65,14 +68,14 @@ public class AnadirCoche extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Placa");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 140, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        getContentPane().add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 140, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("¿Cuál es la marca de tu coche?");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
@@ -87,6 +90,11 @@ public class AnadirCoche extends javax.swing.JInternalFrame {
         });
         getContentPane().add(jComboMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 146, -1));
 
+        comboBoxModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxModeloActionPerformed(evt);
+            }
+        });
         getContentPane().add(comboBoxModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 145, -1));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
@@ -139,7 +147,26 @@ public class AnadirCoche extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnadirActionPerformed
-        // TODO add your handling code here:
+        
+        opcionModelo=comboBoxModelo.getSelectedItem().toString();
+        Auto auto= new Auto();
+        
+        auto.setId(controladorAuto.llenarId());
+        auto.setPlaca(txtColor.getText());
+        auto.setColor(txtColor.getText());
+        auto.setEspacio(0);
+        auto.setEstado('A');
+        auto.setTip_aut_id_fk(controladorAuto.buscarTipo(opciontipo));
+        auto.setMod_id_fk(controladorAuto.buscarModelo(opcionMarca));
+        auto.setUsu_id_fk(controladorAuto.buscar(email));
+        
+        System.out.println("d"+auto.getMod_id_fk());
+        
+        if(controladorAuto.anadirAuto(auto)==true){
+        JOptionPane.showMessageDialog(null,"Guardado", "Informacion", JOptionPane.INFORMATION_MESSAGE); 
+        dispose();
+        }
+        
     }//GEN-LAST:event_btnAnadirActionPerformed
 
     private void jComboMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboMarcaActionPerformed
@@ -148,6 +175,7 @@ public class AnadirCoche extends javax.swing.JInternalFrame {
         int a=controladorAuto.buscarIdMarca(opcionMarca);
         if(controladorAuto.llenarComboBoxNombreModelo(comboBoxModelo,a)==false){
         }
+        
     }//GEN-LAST:event_jComboMarcaActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -155,8 +183,12 @@ public class AnadirCoche extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void jComboTipoCocheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboTipoCocheActionPerformed
-        // TODO add your handling code here:
+        opciontipo=jComboTipoCoche.getSelectedItem().toString();
     }//GEN-LAST:event_jComboTipoCocheActionPerformed
+
+    private void comboBoxModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxModeloActionPerformed
+        
+    }//GEN-LAST:event_comboBoxModeloActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -171,7 +203,7 @@ public class AnadirCoche extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField txtColor;
+    private javax.swing.JTextField txtPlaca;
     // End of variables declaration//GEN-END:variables
 }
