@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.ControladorPreferencias;
 import controlador.ControladorUsuario;
 import java.text.Format;
 import java.text.SimpleDateFormat;
@@ -18,6 +19,7 @@ import modelo.Usuario;
 public class SignUp extends javax.swing.JFrame {
 
     ControladorUsuario controladorUsuario;
+    ControladorPreferencias controladorPreferencias;
     Principal ventanaPrincipal;
     BlaBlaCar blablacar;
     String genero;
@@ -32,6 +34,7 @@ public class SignUp extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         controladorUsuario=new ControladorUsuario();
+        controladorPreferencias= new ControladorPreferencias();
         
     }
 
@@ -187,8 +190,9 @@ public class SignUp extends javax.swing.JFrame {
                 usu.setGenero(genero);
                 if(controladorUsuario.crearUsuario(usu)==true){
                     JOptionPane.showMessageDialog(null,"Datos Creados Correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+                    controladorPreferencias.anadirPreferencias(usu.getId());
                     setVisible(false);
-                    blablacar=new BlaBlaCar(usu.getNombre());
+                    blablacar=new BlaBlaCar(usu.getNombre(),usu.getEmail());
                     blablacar.setVisible(true);
                 }else{
                     JOptionPane.showMessageDialog(null,"No se pudo guardar los datos", "Error", JOptionPane.ERROR_MESSAGE);

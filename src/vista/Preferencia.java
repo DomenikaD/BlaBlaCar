@@ -5,7 +5,9 @@
  */
 package vista;
 
+import controlador.ControladorPreferencias;
 import java.awt.Color;
+import modelo.Preferencias;
 
 /**
  *
@@ -16,24 +18,91 @@ public class Preferencia extends javax.swing.JInternalFrame {
     /**
      * Creates new form Preferencia
      */
-    public Preferencia() {
+    ControladorPreferencias controladorPreferencias;
+    Preferencias pre= new Preferencias();
+    
+    int habla,fumar,mascota,musica;
+    int id;
+    
+    String email;
+    public Preferencia(String ema) {
         initComponents();
-        botonHabla0.setBackground(Color.GRAY);
-        botonHabla1.setBackground(Color.GRAY);
-        botonHabla2.setBackground(Color.GRAY);
+        email=ema;
+        controladorPreferencias = new ControladorPreferencias();
         
-        botonfumar0.setBackground(Color.GRAY);
-        botonfumar1.setBackground(Color.GRAY);
-        botonfumar2.setBackground(Color.GRAY);
+        pre=controladorPreferencias.buscarPreferencias(controladorPreferencias.buscarid(email));
+        id=pre.getBla_usuarios_usu_id();
+        switch(pre.getPre_conversacion()){
+            case 0:
+                botonHabla0.setBackground(Color.BLUE);
+                botonHabla1.setBackground(Color.GRAY);
+                botonHabla2.setBackground(Color.GRAY);
+                break;
+            case 1:
+                botonHabla0.setBackground(Color.GRAY);
+                botonHabla1.setBackground(Color.BLUE);
+                botonHabla2.setBackground(Color.GRAY);
+                break;
+            case 2:
+                botonHabla0.setBackground(Color.GRAY);
+                botonHabla1.setBackground(Color.GRAY);
+                botonHabla2.setBackground(Color.BLUE);
+                break;
+        }
         
-        botonMascota0.setBackground(Color.GRAY);
-        botonMascota1.setBackground(Color.GRAY);
-        botonMascota2.setBackground(Color.GRAY);
+        switch(pre.getPre_fumar()){
+            case 0:
+                botonfumar0.setBackground(Color.BLUE);
+                botonfumar1.setBackground(Color.GRAY);
+                botonfumar2.setBackground(Color.GRAY);
+                break;
+            case 1:
+                botonfumar0.setBackground(Color.GRAY);
+                botonfumar1.setBackground(Color.BLUE);
+                botonfumar2.setBackground(Color.GRAY);
+                break;
+            case 2:
+                botonfumar0.setBackground(Color.GRAY);
+                botonfumar1.setBackground(Color.GRAY);
+                botonfumar2.setBackground(Color.BLUE);
+                break;
+        }
+
+        switch(pre.getPre_mascota()){
+            case 0:
+                botonMascota0.setBackground(Color.BLUE);
+                botonMascota1.setBackground(Color.GRAY);
+                botonMascota2.setBackground(Color.GRAY);
+                break;
+            case 1:
+                botonMascota0.setBackground(Color.GRAY);
+                botonMascota1.setBackground(Color.BLUE);
+                botonMascota2.setBackground(Color.GRAY);
+                break;
+            case 2:
+                botonMascota0.setBackground(Color.GRAY);
+                botonMascota1.setBackground(Color.GRAY);
+                botonMascota2.setBackground(Color.BLUE);
+                break;
+        }
         
-        botonMusica0.setBackground(Color.GRAY);
-        botonMusica1.setBackground(Color.GRAY);
-        botonMusica2.setBackground(Color.GRAY);
-        
+        switch(pre.getPre_musica()){
+            case 0:
+                botonMusica0.setBackground(Color.BLUE);
+                botonMusica1.setBackground(Color.GRAY);
+                botonMusica2.setBackground(Color.GRAY);
+                break;
+            case 1:
+                botonMusica0.setBackground(Color.GRAY);
+                botonMusica1.setBackground(Color.BLUE);
+                botonMusica2.setBackground(Color.GRAY);
+                break;
+            case 2:
+                botonMusica0.setBackground(Color.GRAY);
+                botonMusica1.setBackground(Color.GRAY);
+                botonMusica2.setBackground(Color.BLUE);
+                break;
+        }
         
         
     }
@@ -162,6 +231,11 @@ public class Preferencia extends javax.swing.JInternalFrame {
 
         jButton1.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
         jButton1.setText("Validar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -258,6 +332,7 @@ public class Preferencia extends javax.swing.JInternalFrame {
         botonHabla0.setBackground(Color.BLUE);
         botonHabla1.setBackground(Color.GRAY);
         botonHabla2.setBackground(Color.GRAY);
+        habla=0;
     }//GEN-LAST:event_botonHabla0ActionPerformed
 
     private void botonHabla1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHabla1ActionPerformed
@@ -265,6 +340,7 @@ public class Preferencia extends javax.swing.JInternalFrame {
         botonHabla0.setBackground(Color.GRAY);
         botonHabla1.setBackground(Color.BLUE);
         botonHabla2.setBackground(Color.GRAY);
+        habla=1;
     }//GEN-LAST:event_botonHabla1ActionPerformed
 
     private void botonHabla2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHabla2ActionPerformed
@@ -272,12 +348,14 @@ public class Preferencia extends javax.swing.JInternalFrame {
         botonHabla0.setBackground(Color.GRAY);
         botonHabla1.setBackground(Color.GRAY);
         botonHabla2.setBackground(Color.BLUE);
+        habla=2;
     }//GEN-LAST:event_botonHabla2ActionPerformed
 
     private void botonfumar0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonfumar0ActionPerformed
         botonfumar0.setBackground(Color.BLUE);
         botonfumar1.setBackground(Color.GRAY);
         botonfumar2.setBackground(Color.GRAY);
+        fumar=0;
     }//GEN-LAST:event_botonfumar0ActionPerformed
 
     private void botonfumar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonfumar1ActionPerformed
@@ -285,6 +363,7 @@ public class Preferencia extends javax.swing.JInternalFrame {
         botonfumar0.setBackground(Color.GRAY);
         botonfumar1.setBackground(Color.BLUE);
         botonfumar2.setBackground(Color.GRAY);
+        fumar=1;
     }//GEN-LAST:event_botonfumar1ActionPerformed
 
     private void botonfumar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonfumar2ActionPerformed
@@ -292,12 +371,14 @@ public class Preferencia extends javax.swing.JInternalFrame {
         botonfumar0.setBackground(Color.GRAY);
         botonfumar1.setBackground(Color.GRAY);
         botonfumar2.setBackground(Color.BLUE);
+        fumar=2;
     }//GEN-LAST:event_botonfumar2ActionPerformed
 
     private void botonMascota0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMascota0ActionPerformed
         botonMascota0.setBackground(Color.BLUE);
         botonMascota1.setBackground(Color.GRAY);
         botonMascota2.setBackground(Color.GRAY);
+        mascota=0;
     }//GEN-LAST:event_botonMascota0ActionPerformed
 
     private void botonMascota1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMascota1ActionPerformed
@@ -305,6 +386,7 @@ public class Preferencia extends javax.swing.JInternalFrame {
         botonMascota0.setBackground(Color.GRAY);
         botonMascota1.setBackground(Color.BLUE);
         botonMascota2.setBackground(Color.GRAY);
+        mascota=1;
     }//GEN-LAST:event_botonMascota1ActionPerformed
 
     private void botonMascota2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMascota2ActionPerformed
@@ -312,6 +394,7 @@ public class Preferencia extends javax.swing.JInternalFrame {
         botonMascota0.setBackground(Color.GRAY);
         botonMascota1.setBackground(Color.GRAY);
         botonMascota2.setBackground(Color.BLUE);
+        mascota=2;
     }//GEN-LAST:event_botonMascota2ActionPerformed
 
     private void botonMusica0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMusica0ActionPerformed
@@ -319,6 +402,7 @@ public class Preferencia extends javax.swing.JInternalFrame {
         botonMusica0.setBackground(Color.BLUE);
         botonMusica1.setBackground(Color.GRAY);
         botonMusica2.setBackground(Color.GRAY);
+        musica=0;
     }//GEN-LAST:event_botonMusica0ActionPerformed
 
     private void botonMusica1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMusica1ActionPerformed
@@ -326,6 +410,7 @@ public class Preferencia extends javax.swing.JInternalFrame {
         botonMusica0.setBackground(Color.GRAY);
         botonMusica1.setBackground(Color.BLUE);
         botonMusica2.setBackground(Color.GRAY);
+        musica=1;
     }//GEN-LAST:event_botonMusica1ActionPerformed
 
     private void botonMusica2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMusica2ActionPerformed
@@ -333,7 +418,13 @@ public class Preferencia extends javax.swing.JInternalFrame {
         botonMusica0.setBackground(Color.GRAY);
         botonMusica1.setBackground(Color.GRAY);
         botonMusica2.setBackground(Color.BLUE);
+        musica=2;
     }//GEN-LAST:event_botonMusica2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        controladorPreferencias.actualizarAuto(habla, fumar, mascota, musica, id);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

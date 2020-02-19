@@ -22,13 +22,14 @@ public class BlaBlaCar extends javax.swing.JFrame {
     TransferenciaPendientes transferenciaPendientes;
     BuscarViaje buscarViaje;
     Perfil perfil;
+    String email;
     /**
      * Creates new form BlaBlaCar
      */
-    public BlaBlaCar(String usuario) {
+    public BlaBlaCar(String usuario,String emai) {
         initComponents();
         setLocationRelativeTo(null);
-        
+        email=emai;
         jMenuPerfil.setText(usuario);
         
         
@@ -189,7 +190,7 @@ public class BlaBlaCar extends javax.swing.JFrame {
         // TODO add your handling code here:
         // TODO add your handling code here:
         if(perfil == null || !perfil.isVisible()){
-        perfil = new Perfil();
+        perfil = new Perfil(email);
         jDesktopPane1.add(perfil);
         perfil.show();
         }

@@ -73,7 +73,8 @@ public class ControladorUsuario {
 
         return r;
     }
-     public int llenarId(){
+    
+    public int llenarId(){
         int llena=0;
         boolean ban=false;
         Connection con = null;

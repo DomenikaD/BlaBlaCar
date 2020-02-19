@@ -113,7 +113,7 @@ public class Login extends javax.swing.JFrame {
                 String pasS=new String(txtPassword.getPassword());
                 
                 if (controladorLogin.buscarLogin(txtUsername.getText(), pasS)==true){
-                       blablacar = new BlaBlaCar(controladorLogin.buscar(txtUsername.getText()));
+                       blablacar = new BlaBlaCar(controladorLogin.buscar(txtUsername.getText()),txtUsername.getText());
                        setVisible(false);
                        blablacar.setVisible(true); 
                 }else{

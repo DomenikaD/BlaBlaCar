@@ -15,13 +15,13 @@ public class Perfil extends javax.swing.JInternalFrame {
     InformacionPersonal informacionPersonal;
     Preferencia preferencia;
     
-  
+    String email;
     /**
      * Creates new form Perfil
      */
-    public Perfil() {
+    public Perfil(String ema) {
         initComponents();
-        
+        email=ema;
     }
 
     /**
@@ -108,7 +108,7 @@ public class Perfil extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         
         if(preferencia == null || !preferencia.isVisible()){
-        preferencia = new Preferencia();
+        preferencia = new Preferencia(email);
         BlaBlaCar.jDesktopPane1.add(preferencia);
         preferencia.toFront();
         preferencia.setVisible(true);
