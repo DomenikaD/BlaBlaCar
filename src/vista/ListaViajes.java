@@ -7,7 +7,7 @@ package vista;
 
 /**
  *
- * @author GerardoG
+ * @author Domenika Delgado
  */
 public class ListaViajes extends javax.swing.JInternalFrame {
 

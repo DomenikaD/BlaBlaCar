@@ -7,7 +7,7 @@ package vista;
 
 /**
  *
- * @author GerardoG
+ * @author Domenika Delgado
  */
 public class PublicarViaje2 extends javax.swing.JInternalFrame {
 

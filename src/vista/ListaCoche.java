@@ -7,7 +7,7 @@ package vista;
 
 /**
  *
- * @author GerardoG
+ * @author Domenika Delgado
  */
 public class ListaCoche extends javax.swing.JInternalFrame {
 

@@ -14,7 +14,7 @@ import modelo.Usuario;
 
 /**
  *
- * @author GerardoG
+ * @author Domenika Delgado
  */
 public class SignUp extends javax.swing.JFrame {
 

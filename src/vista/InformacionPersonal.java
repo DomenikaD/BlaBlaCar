@@ -7,7 +7,7 @@ package vista;
 
 /**
  *
- * @author GerardoG
+ * @author Domenika Delgado
  */
 public class InformacionPersonal extends javax.swing.JInternalFrame {
 
